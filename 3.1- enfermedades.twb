@@ -1,0 +1,1409 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20211.22.0325.1105                               -->
+<workbook original-version='18.1' source-build='2021.1.13 (20211.22.0325.1105)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='sales_clean2.csv+ (Varias conexiones)' inline='true' name='federated.0noh44a1s7noid111ktgi0ar6gha' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='sales_clean2' name='textscan.1qgeb3f0kt5wtb161jeob10vlvva'>
+            <connection class='textscan' directory='C:/Users/Campru/Documents/Arnau/UAB/4t curs/2n quatrimestre/tfg - Atmira Pharma Visualization/datasets/new' filename='sales_clean2.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='artrosis' name='textscan.0hb09uk0g9k7m6153swzc1wekeub'>
+            <connection class='textscan' directory='C:/Users/Campru/Documents/Arnau/UAB/4t curs/2n quatrimestre/tfg - Atmira Pharma Visualization/datasets/new/enfermedades' filename='artrosis.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='enfermedades_clean' name='textscan.0s20gmq1o1fqb71fsiu4x1g4vqks'>
+            <connection class='textscan' directory='C:/Users/Campru/Documents/Arnau/UAB/4t curs/2n quatrimestre/tfg - Atmira Pharma Visualization/datasets/new' filename='enfermedades_clean.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0s20gmq1o1fqb71fsiu4x1g4vqks' name='enfermedades_clean.csv' table='[enfermedades_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES' separator=';'>
+            <column datatype='string' name='product_id' ordinal='0' />
+            <column datatype='string' name='sku' ordinal='1' />
+            <column datatype='string' name='name' ordinal='2' />
+            <column datatype='string' name='marca_value' ordinal='3' />
+            <column datatype='string' name='short_description' ordinal='4' />
+            <column datatype='string' name='analytic_category' ordinal='5' />
+            <column datatype='string' name='picture' ordinal='6' />
+            <column datatype='string' name='enfermedad' ordinal='7' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.1qgeb3f0kt5wtb161jeob10vlvva' name='sales_clean2.csv' table='[sales_clean2#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_ES' separator=';'>
+              <column datatype='string' name='num_order' ordinal='0' />
+              <column datatype='string' name='item_id' ordinal='1' />
+              <column datatype='datetime' name='created_at' ordinal='2' />
+              <column datatype='string' name='product_id' ordinal='3' />
+              <column datatype='integer' name='qty_ordered' ordinal='4' />
+              <column datatype='real' name='base_cost' ordinal='5' />
+              <column datatype='real' name='price' ordinal='6' />
+              <column datatype='integer' name='discount_percent' ordinal='7' />
+              <column datatype='string' name='customer_id' ordinal='8' />
+              <column datatype='string' name='city' ordinal='9' />
+              <column datatype='integer' name='zipcode' ordinal='10' />
+              <column datatype='string' name='provincia' ordinal='11' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0s20gmq1o1fqb71fsiu4x1g4vqks' name='enfermedades_clean.csv' table='[enfermedades_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_ES' separator=';'>
+              <column datatype='string' name='product_id' ordinal='0' />
+              <column datatype='string' name='sku' ordinal='1' />
+              <column datatype='string' name='name' ordinal='2' />
+              <column datatype='string' name='marca_value' ordinal='3' />
+              <column datatype='string' name='short_description' ordinal='4' />
+              <column datatype='string' name='analytic_category' ordinal='5' />
+              <column datatype='string' name='picture' ordinal='6' />
+              <column datatype='string' name='enfermedad' ordinal='7' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[analytic_category]' value='[enfermedades_clean.csv].[analytic_category]' />
+          <map key='[base_cost]' value='[sales_clean2.csv].[base_cost]' />
+          <map key='[city]' value='[sales_clean2.csv].[city]' />
+          <map key='[created_at]' value='[sales_clean2.csv].[created_at]' />
+          <map key='[customer_id]' value='[sales_clean2.csv].[customer_id]' />
+          <map key='[discount_percent]' value='[sales_clean2.csv].[discount_percent]' />
+          <map key='[enfermedad]' value='[enfermedades_clean.csv].[enfermedad]' />
+          <map key='[item_id]' value='[sales_clean2.csv].[item_id]' />
+          <map key='[marca_value]' value='[enfermedades_clean.csv].[marca_value]' />
+          <map key='[name]' value='[enfermedades_clean.csv].[name]' />
+          <map key='[num_order]' value='[sales_clean2.csv].[num_order]' />
+          <map key='[picture]' value='[enfermedades_clean.csv].[picture]' />
+          <map key='[price]' value='[sales_clean2.csv].[price]' />
+          <map key='[product_id (enfermedades_clean.csv)]' value='[enfermedades_clean.csv].[product_id]' />
+          <map key='[product_id]' value='[sales_clean2.csv].[product_id]' />
+          <map key='[provincia]' value='[sales_clean2.csv].[provincia]' />
+          <map key='[qty_ordered]' value='[sales_clean2.csv].[qty_ordered]' />
+          <map key='[short_description]' value='[enfermedades_clean.csv].[short_description]' />
+          <map key='[sku]' value='[enfermedades_clean.csv].[sku]' />
+          <map key='[zipcode]' value='[sales_clean2.csv].[zipcode]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[enfermedades_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>num_order</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[num_order]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>num_order</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>item_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[item_id]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>item_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>created_at</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[created_at]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>created_at</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_id]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>product_id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>qty_ordered</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[qty_ordered]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>qty_ordered</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>base_cost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[base_cost]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>base_cost</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[price]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>price</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>discount_percent</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[discount_percent]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>discount_percent</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>customer_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[customer_id]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>customer_id</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[city]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>city</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zipcode</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zipcode]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>zipcode</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>provincia</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[provincia]</local-name>
+            <parent-name>[sales_clean2.csv]</parent-name>
+            <remote-alias>provincia</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_id (enfermedades_clean.csv)]</local-name>
+            <parent-name>[enfermedades_clean.csv]</parent-name>
+            <remote-alias>product_id</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sku</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sku]</local-name>
+            <parent-name>[enfermedades_clean.csv]</parent-name>
+            <remote-alias>sku</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[enfermedades_clean.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>marca_value</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[marca_value]</local-name>
+            <parent-name>[enfermedades_clean.csv]</parent-name>
+            <remote-alias>marca_value</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>short_description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[short_description]</local-name>
+            <parent-name>[enfermedades_clean.csv]</parent-name>
+            <remote-alias>short_description</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>analytic_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[analytic_category]</local-name>
+            <parent-name>[enfermedades_clean.csv]</parent-name>
+            <remote-alias>analytic_category</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>picture</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[picture]</local-name>
+            <parent-name>[enfermedades_clean.csv]</parent-name>
+            <remote-alias>picture</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>enfermedad</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[enfermedad]</local-name>
+            <parent-name>[enfermedades_clean.csv]</parent-name>
+            <remote-alias>enfermedad</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Index' datatype='integer' name='[Calculation_1235956643238891520]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='INDEX()'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='enfermedades_clean' datatype='table' name='[__tableau_internal_object_id__].[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='sales' datatype='table' name='[__tableau_internal_object_id__].[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]' role='measure' type='quantitative' />
+      <column caption='Analytic Category' datatype='string' name='[analytic_category]' role='dimension' type='nominal' />
+      <column caption='Base Cost' datatype='real' name='[base_cost]' role='measure' type='quantitative' />
+      <column caption='City' datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Created At' datatype='datetime' name='[created_at]' role='dimension' type='ordinal' />
+      <column caption='Customer Id' datatype='string' name='[customer_id]' role='dimension' type='nominal' />
+      <column caption='Discount Percent' datatype='integer' name='[discount_percent]' role='measure' type='quantitative' />
+      <column caption='Enfermedad' datatype='string' name='[enfermedad]' role='dimension' type='nominal' />
+      <column caption='Item Id' datatype='string' name='[item_id]' role='dimension' type='nominal' />
+      <column caption='Marca Value' datatype='string' name='[marca_value]' role='dimension' type='nominal' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='Num Order' datatype='string' name='[num_order]' role='dimension' type='nominal' />
+      <column caption='Picture' datatype='string' name='[picture]' role='dimension' type='nominal' />
+      <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+      <column caption='Product Id (Enfermedades Clean.Csv)' datatype='string' name='[product_id (enfermedades_clean.csv)]' role='dimension' type='nominal' />
+      <column caption='Product Id' datatype='string' name='[product_id]' role='dimension' type='nominal' />
+      <column caption='Provincia' datatype='string' name='[provincia]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Qty Ordered' datatype='integer' name='[qty_ordered]' role='measure' type='quantitative' />
+      <column caption='Short Description' datatype='string' name='[short_description]' role='dimension' type='nominal' />
+      <column caption='Sku' datatype='string' name='[sku]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Zipcode' datatype='integer' default-format='*00000' name='[zipcode]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <group caption='Acción (Product Id (Alergia.Csv))' hidden='true' name='[Action (Product Id (Alergia.Csv))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[product_id (alergia.csv)]' />
+        </groupfilter>
+      </group>
+      <group caption='Acción (Product Id (Artrosis.Csv))' hidden='true' name='[Action (Product Id (Artrosis.Csv))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[product_id (artrosis.csv)]' />
+        </groupfilter>
+      </group>
+      <group caption='Acción (Product Id (Enfermedades Clean.Csv))' hidden='true' name='[Action (Product Id (Enfermedades Clean.Csv))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[product_id (enfermedades_clean.csv)]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='es_ES' class='hyper' dbname='C:/Users/Campru/Documents/Arnau/UAB/4t curs/2n quatrimestre/tfg - Atmira Pharma Visualization/hojas de trabajo/extraccions/extracción gráficas3.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='04/19/2022 09:54:14 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169' table='[Extract].[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920' table='[Extract].[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]' type='table' />
+            <relation name='enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169' table='[Extract].[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[analytic_category]' value='[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169].[analytic_category]' />
+            <map key='[base_cost]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[base_cost]' />
+            <map key='[city]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[city]' />
+            <map key='[created_at]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[created_at]' />
+            <map key='[customer_id]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[customer_id]' />
+            <map key='[discount_percent]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[discount_percent]' />
+            <map key='[enfermedad]' value='[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169].[enfermedad]' />
+            <map key='[item_id]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[item_id]' />
+            <map key='[marca_value]' value='[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169].[marca_value]' />
+            <map key='[name]' value='[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169].[name]' />
+            <map key='[num_order]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[num_order]' />
+            <map key='[picture]' value='[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169].[picture]' />
+            <map key='[price]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[price]' />
+            <map key='[product_id (enfermedades_clean.csv)]' value='[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169].[product_id]' />
+            <map key='[product_id]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[product_id]' />
+            <map key='[provincia]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[provincia]' />
+            <map key='[qty_ordered]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[qty_ordered]' />
+            <map key='[short_description]' value='[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169].[short_description]' />
+            <map key='[sku]' value='[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169].[sku]' />
+            <map key='[zipcode]' value='[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920].[zipcode]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='sales_clean2.csv+ (Varias conexiones)' increment-value='%null%' refresh-type='create' rows-inserted='931256' timestamp-start='2022-04-19 21:54:14.158' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>num_order</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[num_order]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>num_order</remote-alias>
+              <ordinal>0</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>409276</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>item_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[item_id]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>item_id</remote-alias>
+              <ordinal>1</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>920129</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>created_at</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[created_at]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>created_at</remote-alias>
+              <ordinal>2</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>329323</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_id]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>product_id</remote-alias>
+              <ordinal>3</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>45461</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>qty_ordered</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[qty_ordered]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>qty_ordered</remote-alias>
+              <ordinal>4</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>base_cost</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[base_cost]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>base_cost</remote-alias>
+              <ordinal>5</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>55728</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[price]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>price</remote-alias>
+              <ordinal>6</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11133</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>discount_percent</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[discount_percent]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>discount_percent</remote-alias>
+              <ordinal>7</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>36</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>customer_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[customer_id]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>customer_id</remote-alias>
+              <ordinal>8</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>180123</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>city</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[city]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>city</remote-alias>
+              <ordinal>9</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>26198</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zipcode</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zipcode]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>zipcode</remote-alias>
+              <ordinal>10</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14313</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>provincia</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[provincia]</local-name>
+              <parent-name>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</parent-name>
+              <remote-alias>provincia</remote-alias>
+              <ordinal>11</ordinal>
+              <family>sales_clean2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>63</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_id (enfermedades_clean.csv)]</local-name>
+              <parent-name>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</parent-name>
+              <remote-alias>product_id</remote-alias>
+              <ordinal>12</ordinal>
+              <family>enfermedades_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>288</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sku</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sku]</local-name>
+              <parent-name>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</parent-name>
+              <remote-alias>sku</remote-alias>
+              <ordinal>13</ordinal>
+              <family>enfermedades_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>288</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name]</local-name>
+              <parent-name>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</parent-name>
+              <remote-alias>name</remote-alias>
+              <ordinal>14</ordinal>
+              <family>enfermedades_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>337</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>marca_value</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[marca_value]</local-name>
+              <parent-name>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</parent-name>
+              <remote-alias>marca_value</remote-alias>
+              <ordinal>15</ordinal>
+              <family>enfermedades_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>116</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>short_description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[short_description]</local-name>
+              <parent-name>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</parent-name>
+              <remote-alias>short_description</remote-alias>
+              <ordinal>16</ordinal>
+              <family>enfermedades_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>267</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>analytic_category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[analytic_category]</local-name>
+              <parent-name>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</parent-name>
+              <remote-alias>analytic_category</remote-alias>
+              <ordinal>17</ordinal>
+              <family>enfermedades_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>picture</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[picture]</local-name>
+              <parent-name>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</parent-name>
+              <remote-alias>picture</remote-alias>
+              <ordinal>18</ordinal>
+              <family>enfermedades_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>288</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>enfermedad</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[enfermedad]</local-name>
+              <parent-name>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</parent-name>
+              <remote-alias>enfermedad</remote-alias>
+              <ordinal>19</ordinal>
+              <family>enfermedades_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;España&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='enfermedades_clean' id='enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169'>
+            <properties context=''>
+              <relation connection='textscan.0s20gmq1o1fqb71fsiu4x1g4vqks' name='enfermedades_clean.csv' table='[enfermedades_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES' separator=';'>
+                  <column datatype='string' name='product_id' ordinal='0' />
+                  <column datatype='string' name='sku' ordinal='1' />
+                  <column datatype='string' name='name' ordinal='2' />
+                  <column datatype='string' name='marca_value' ordinal='3' />
+                  <column datatype='string' name='short_description' ordinal='4' />
+                  <column datatype='string' name='analytic_category' ordinal='5' />
+                  <column datatype='string' name='picture' ordinal='6' />
+                  <column datatype='string' name='enfermedad' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169' table='[Extract].[enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169]' type='table' />
+            </properties>
+          </object>
+          <object caption='sales' id='sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920'>
+            <properties context=''>
+              <relation connection='textscan.1qgeb3f0kt5wtb161jeob10vlvva' name='sales_clean2.csv' table='[sales_clean2#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES' separator=';'>
+                  <column datatype='string' name='num_order' ordinal='0' />
+                  <column datatype='string' name='item_id' ordinal='1' />
+                  <column datatype='datetime' name='created_at' ordinal='2' />
+                  <column datatype='string' name='product_id' ordinal='3' />
+                  <column datatype='integer' name='qty_ordered' ordinal='4' />
+                  <column datatype='real' name='base_cost' ordinal='5' />
+                  <column datatype='real' name='price' ordinal='6' />
+                  <column datatype='integer' name='discount_percent' ordinal='7' />
+                  <column datatype='string' name='customer_id' ordinal='8' />
+                  <column datatype='string' name='city' ordinal='9' />
+                  <column datatype='integer' name='zipcode' ordinal='10' />
+                  <column datatype='string' name='provincia' ordinal='11' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920' table='[Extract].[sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[product_id]' />
+              <expression op='[product_id (enfermedades_clean.csv)]' />
+            </expression>
+            <first-end-point object-id='sales_clean2.csv_B2892901B6CB4608B4AB3E9791433920' />
+            <second-end-point object-id='enfermedades_clean.csv_63ADE4E651974941AD88AB694F25E169' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filtro 2 (generado) 1' name='[Action2_7FDF1BD0921740ECA86E006DE63A4C89]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='16- [D] 2' type='sheet' worksheet='top products' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='16- [D] 2' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='products info'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000'>Product Information</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sales_clean2.csv+ (Varias conexiones)' name='federated.0noh44a1s7noid111ktgi0ar6gha' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0noh44a1s7noid111ktgi0ar6gha'>
+            <column caption='Analytic Category' datatype='string' name='[analytic_category]' role='dimension' type='nominal' />
+            <column-instance column='[analytic_category]' derivation='None' name='[none:analytic_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[product_id]' derivation='None' name='[none:product_id:nk]' pivot='key' type='nominal' />
+            <column-instance column='[short_description]' derivation='None' name='[none:short_description:nk]' pivot='key' type='nominal' />
+            <column caption='Product Id (Enfermedades Clean.Csv)' datatype='string' name='[product_id (enfermedades_clean.csv)]' role='dimension' type='nominal' />
+            <column caption='Product Id' datatype='string' name='[product_id]' role='dimension' type='nominal' />
+            <column caption='Short Description' datatype='string' name='[short_description]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0noh44a1s7noid111ktgi0ar6gha].[Action (Product Id (Enfermedades Clean.Csv))]'>
+            <groupfilter function='level-members' level='[product_id (enfermedades_clean.csv)]' user:ui-action-filter='[Action2_7FDF1BD0921740ECA86E006DE63A4C89]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0noh44a1s7noid111ktgi0ar6gha].[Action (Product Id (Enfermedades Clean.Csv))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='5' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:short_description:nk]' value='1260' />
+            <format attr='width' field='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id:nk]' value='120' />
+            <format attr='width' field='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:analytic_category:nk]' value='204' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id:nk] / ([federated.0noh44a1s7noid111ktgi0ar6gha].[none:analytic_category:nk] / [federated.0noh44a1s7noid111ktgi0ar6gha].[none:short_description:nk]))</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{26BA13CD-F39F-4CDF-A185-974D79FCF98A}' />
+    </worksheet>
+    <worksheet name='top products'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000'>Top 10 Products by Enfermedad</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sales_clean2.csv+ (Varias conexiones)' name='federated.0noh44a1s7noid111ktgi0ar6gha' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0noh44a1s7noid111ktgi0ar6gha'>
+            <column caption='Index' datatype='integer' name='[Calculation_1235956643238891520]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='INDEX()'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[enfermedad]' derivation='Attribute' name='[attr:enfermedad:nk]' pivot='key' type='nominal' />
+            <column caption='Enfermedad' datatype='string' name='[enfermedad]' role='dimension' type='nominal' />
+            <column-instance column='[enfermedad]' derivation='None' name='[none:enfermedad:nk]' pivot='key' type='nominal' />
+            <column-instance column='[product_id (enfermedades_clean.csv)]' derivation='None' name='[none:product_id (enfermedades_clean.csv):nk]' pivot='key' type='nominal' />
+            <column caption='Product Id (Enfermedades Clean.Csv)' datatype='string' name='[product_id (enfermedades_clean.csv)]' role='dimension' type='nominal' />
+            <column caption='Qty Ordered' datatype='integer' name='[qty_ordered]' role='measure' type='quantitative' />
+            <column-instance column='[qty_ordered]' derivation='Sum' name='[sum:qty_ordered:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1235956643238891520]' derivation='User' name='[usr:Calculation_1235956643238891520:ok:1]' pivot='key' type='ordinal'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0noh44a1s7noid111ktgi0ar6gha].[attr:enfermedad:nk]'>
+            <groupfilter function='level-members' level='[attr:enfermedad:nk]' />
+          </filter>
+          <filter class='categorical' column='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:enfermedad:nk]'>
+            <groupfilter function='member' level='[none:enfermedad:nk]' member='&quot;colesterol&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id (enfermedades_clean.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:product_id (enfermedades_clean.csv):nk]' />
+              <groupfilter function='member' level='[none:product_id (enfermedades_clean.csv):nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0noh44a1s7noid111ktgi0ar6gha].[usr:Calculation_1235956643238891520:ok:1]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='1' />
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='2' />
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='3' />
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='4' />
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='5' />
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='6' />
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='7' />
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='8' />
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='9' />
+              <groupfilter function='member' level='[usr:Calculation_1235956643238891520:ok:1]' member='10' />
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id (enfermedades_clean.csv):nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0noh44a1s7noid111ktgi0ar6gha].[sum:qty_ordered:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id (enfermedades_clean.csv):nk]</column>
+            <column>[federated.0noh44a1s7noid111ktgi0ar6gha].[attr:enfermedad:nk]</column>
+            <column>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:enfermedad:nk]</column>
+            <column>[federated.0noh44a1s7noid111ktgi0ar6gha].[usr:Calculation_1235956643238891520:ok:1]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id (enfermedades_clean.csv):nk]' value='79' />
+            <format attr='title' class='0' field='[federated.0noh44a1s7noid111ktgi0ar6gha].[sum:qty_ordered:qk]' scope='rows' value='Total Quantity Sold' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0noh44a1s7noid111ktgi0ar6gha].[usr:Calculation_1235956643238891520:ok:1]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='in-tooltip' field='[federated.0noh44a1s7noid111ktgi0ar6gha].[usr:Calculation_1235956643238891520:ok:1]' value='false' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='border-style' value='solid' />
+            <format attr='border-color' value='#000000' />
+            <format attr='border-width' value='2' />
+            <format attr='title' field='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:enfermedad:nk]' value='Enfermedad'>
+              <formatted-text>
+                <run bold='true'>Enfermedad</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='quick-filter-title'>
+            <format attr='text-align' value='center' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <tooltip column='[federated.0noh44a1s7noid111ktgi0ar6gha].[attr:enfermedad:nk]' />
+              <text column='[federated.0noh44a1s7noid111ktgi0ar6gha].[sum:qty_ordered:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Product Id: </run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id (enfermedades_clean.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Total Qty Sold:</run>
+                <run fontcolor='#000000'>Æ </run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.0noh44a1s7noid111ktgi0ar6gha].[sum:qty_ordered:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Enfermedad: </run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.0noh44a1s7noid111ktgi0ar6gha].[attr:enfermedad:nk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#f28e2b' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0noh44a1s7noid111ktgi0ar6gha].[sum:qty_ordered:qk]</rows>
+        <cols>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id (enfermedades_clean.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{71139C97-9019-42C6-83AD-20085CF893CC}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='16- [D] 2'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='sales_clean2.csv+ (Varias conexiones)' name='federated.0noh44a1s7noid111ktgi0ar6gha' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0noh44a1s7noid111ktgi0ar6gha'>
+        <column caption='Enfermedad' datatype='string' name='[enfermedad]' role='dimension' type='nominal' />
+        <column-instance column='[enfermedad]' derivation='None' name='[none:enfermedad:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='29' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='22' type-v2='layout-basic' w='98400' x='800' y='1000'>
+              <zone h='79500' id='27' name='top products' w='98400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='18500' id='58' name='products info' w='98400' x='800' y='80500'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='62' h='9125' id='30' is-fixed='true' mode='dropdown' name='top products' param='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:enfermedad:nk]' type-v2='filter' w='20600' x='74700' y='12250' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='78' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='77' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='62' h='9125' id='30' mode='dropdown' name='top products' param='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:enfermedad:nk]' type-v2='filter' w='20600' x='74700' y='12250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='79500' id='27' is-fixed='true' name='top products' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='140' h='18500' id='58' is-fixed='true' name='products info' w='98400' x='800' y='80500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{854CA922-EF19-4294-92E2-39B2AB9E0773}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='44'>
+    <window class='dashboard' maximized='true' name='16- [D] 2'>
+      <viewpoints>
+        <viewpoint name='products info'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='top products'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{722201EB-35D5-49BC-8F00-855364E4CB95}' />
+    </window>
+    <window class='worksheet' hidden='true' name='products info'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:Calculation_808677633343320064:qk]</field>
+            <field>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:analytic_category:nk]</field>
+            <field>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id (enfermedades_clean.csv):nk]</field>
+            <field>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{CDAE4545-47E5-4FA9-85AC-4B32E1E17648}' />
+    </window>
+    <window class='worksheet' hidden='true' name='top products'>
+      <cards>
+        <edge name='left'>
+          <strip size='270'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='100'>
+            <card type='columns' />
+          </strip>
+          <strip size='83'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='300'>
+            <card mode='dropdown' param='[federated.0noh44a1s7noid111ktgi0ar6gha].[none:enfermedad:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:enfermedad:nk]</field>
+            <field>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id (alergia.csv):nk]</field>
+            <field>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:product_id (enfermedades_clean.csv):nk]</field>
+            <field>[federated.0noh44a1s7noid111ktgi0ar6gha].[none:short_description (alergia.csv):nk]</field>
+            <field>[federated.0noh44a1s7noid111ktgi0ar6gha].[usr:Calculation_1235956643238891520:ok:1]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{EAACD1CC-2852-4A06-9137-8AF20418EC6A}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='16- [D] 2' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
